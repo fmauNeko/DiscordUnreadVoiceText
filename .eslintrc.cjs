@@ -14,7 +14,7 @@ module.exports = {
         node: true,
       },
       extends: ["plugin:@typescript-eslint/disable-type-checked"],
-      files: [".eslintrc.{js,cjs}"],
+      files: [".eslintrc.{js,cjs}", "release.config.{js,cjs}"],
       parserOptions: {
         sourceType: "script",
       },
