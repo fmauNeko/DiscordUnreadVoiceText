@@ -1,0 +1,6 @@
+{
+  "name": "UnreadVoiceText",
+  "description": "Display an unread indicator on voice channels with unread text chats.",
+  "author": "fmauNeko",
+  "version": "0.0.0"
+}
