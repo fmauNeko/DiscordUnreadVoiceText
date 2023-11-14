@@ -14,7 +14,10 @@ module.exports = {
       "@semantic-release/github",
       {
         assets: [
-          { path: "dist/UnreadVoiceText.plugin.js", label: "Plugin file" },
+          {
+            path: "dist/UnreadVoiceText.plugin.js",
+            label: "UnreadVoiceText.plugin.js",
+          },
         ],
       },
     ],
