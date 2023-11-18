@@ -35,6 +35,8 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
+      - name: Lint
+        run: pnpm lint
       - name: Build release bundle
         run: pnpm build
       - name: Release

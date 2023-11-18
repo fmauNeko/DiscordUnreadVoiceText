@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rspack build"
+    "build": "rspack build",
+    "lint": "eslint src"
   },
   "keywords": [],
   "author": "",
