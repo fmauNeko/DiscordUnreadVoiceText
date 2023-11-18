@@ -1,5 +1,6 @@
+import { Configuration } from "@rspack/cli";
+import { BannerPlugin } from "@rspack/core";
 import path from "path";
-import webpack from "webpack";
 
 import pkg from "./package.json";
 import configJson from "./src/config.json";
@@ -16,7 +17,7 @@ const meta = (() => {
   return lines.join("\n");
 })();
 
-const config: webpack.Configuration = {
+const config: Configuration = {
   mode: "development",
   target: "node",
   devtool: false,
@@ -24,23 +25,12 @@ const config: webpack.Configuration = {
   output: {
     filename: "UnreadVoiceText.plugin.js",
     path: path.join(__dirname, "dist"),
-    libraryTarget: "commonjs2",
-    libraryExport: "default",
-    compareBeforeEmit: false,
+    library: {
+      type: "commonjs2",
+      export: "default",
+    },
   },
-  module: {
-    rules: [
-      {
-        test: /\.ts(x)?$/,
-        loader: "ts-loader",
-        exclude: /node_modules/,
-      },
-    ],
-  },
-  resolve: {
-    extensions: [".tsx", ".ts", ".js"],
-  },
-  plugins: [new webpack.BannerPlugin({ raw: true, banner: meta })],
+  plugins: [new BannerPlugin({ raw: true, banner: meta })],
 };
 
 export default config;
