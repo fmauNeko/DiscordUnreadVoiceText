@@ -22,6 +22,24 @@ const config: Configuration = {
   target: "node",
   devtool: false,
   entry: "./src/index.ts",
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        exclude: [/node_modules/],
+        loader: "builtin:swc-loader",
+        options: {
+          sourceMap: true,
+          jsc: {
+            parser: {
+              syntax: "typescript",
+            },
+          },
+        },
+        type: "javascript/auto",
+      },
+    ],
+  },
   output: {
     filename: "UnreadVoiceText.plugin.js",
     path: path.join(__dirname, "dist"),
